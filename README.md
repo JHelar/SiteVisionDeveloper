@@ -1,9 +1,14 @@
-# PROJECT_NAME
+# SV_PROJECT_NAME
+A boilerplate for developing in SiteVision.
+Contains watcher setup for direct compiling and deployment to a remote SiteVision webdav enviroment.
 
+## Prerequisite
 Recomended IDE is Microsoft VisualCode.
+
+1)	Copy or clone the repo (make sure to change the git remote if you clone!)
+2) 	Download and install Node js (if you dont have allready)
+
 ## Installation
-0)	Copy or clone the repo (make sure to change the git remote if you clone!)
-0.5) 	Download and install Node js (if you dont have allready)
 1) 	In cmd run 'npm install -g gulp'
 2) 	Inside the project folder in cmd run 'npm install'
 3) 	In gulpfile.js change paths to correspond to your developer file structure inside SiteVision.
