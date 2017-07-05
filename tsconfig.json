@@ -1,0 +1,9 @@
+{
+    "files":[
+        "ROOT/**/Scripts/*.ts"
+    ],
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "target": "es5"
+    }
+}

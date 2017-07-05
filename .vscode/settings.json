@@ -1,0 +1,10 @@
+{
+    "scss.validate": true,
+    "scss.colorDecorators.enable": true,
+    "scss.lint.compatibleVendorPrefixes": "ignore",
+    "scss.lint.vendorPrefix": "warning",
+    "scss.lint.duplicateProperties": "ignore",
+    "scss.lint.emptyRules": "warning",
+    "scss.lint.hexColorLength": "error",
+    "scss.showErrors": true
+}
