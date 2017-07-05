@@ -19,5 +19,6 @@ Recomended IDE is Microsoft VisualCode.
 
 ## FAQ
 Q)	Deploy throws error on save.
+
 A)	Common reason is due to the folder structure inside SiteVision does not correspond to the one you have locally.
-	If structure locally is PROJECT_NAME/ROOT/Js then the structure in SiteVision should be /webdav/files/ROOT/Js and make sure that you have the folder structure already setup in SiteVision, the task cannot create folders by it self.
+	If structure locally is PROJECT_NAME/ROOT/Js then the structure in SiteVision should be /webdav/files/ROOT/Js and make sure that you have the folder structure allready setup in SiteVision, the task cannot create folders by it self.
