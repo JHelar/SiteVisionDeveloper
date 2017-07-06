@@ -5,14 +5,6 @@ var ts = require('gulp-typescript');
 var webdav = require('gulp-webdav-sync');
 var tsProject = ts.createProject("tsconfig.json");
 
-
-var webdavOpts = {
-    'log': 'info',
-    'logAuth': true,
-    'base': 'Portal',
-    'uselastmodified': false
-};
-
 var path = {
     scss: 'ROOT/**/Styles/*.scss',
     css: 'ROOT/**/Styles/*.css',
@@ -20,11 +12,17 @@ var path = {
     js: 'ROOT/**/Scripts/*.js'
 }
 
-var webdav_opts = {
+var webdav_vars = {
+    opts: {
+        'log': 'info',
+        'logAuth': true,
+        'base': 'Portal',
+        'uselastmodified': false
+    },
     username: 'USERNAME',
     password: 'PASSWORD',
     baseURL: 'BASEURL/webdav/files/ROOT',
-    path: () => {
+    path: function() {
         return 'http://' + this.username + ":" + this.password + "@" + this.baseURL;
     }
 }
@@ -48,7 +46,7 @@ gulp.task("ts:compile", function () {
 
 gulp.task("deploy", function(){
     return gulp.src([path.js, path.css, path.velocity])
-            .pipe(webdav(webdavOpts.path(), webdavOpts))
+            .pipe(webdav(webdav_vars.path(), webdav_vars.opts))
 });
 
 gulp.task('default:watcher', function() {
@@ -70,7 +68,7 @@ gulp.task('default:watcher', function() {
     });
     gulp.watch([path.js, path.css, path.velocity], function(e){
         gulp.src(e.path)
-            .pipe(webdav(webdavOpts.path(), webdavOpts))
+            .pipe(webdav(webdav_vars.path(), webdav_vars.opts))
             .on('error', function(e){});
     });
 })
